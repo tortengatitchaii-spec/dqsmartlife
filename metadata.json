@@ -1,0 +1,6 @@
+{
+  "name": "DQ SMART LIFE",
+  "description": "แอปพลิเคชันเพื่อการเรียนรู้เรื่องความฉลาดทางดิจิทัล (Digital Intelligence: DQ) 8 ทักษะ พร้อมสถานการณ์จำลอง แบบทดสอบ และ AI DQ Buddy",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
