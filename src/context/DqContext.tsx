@@ -24,6 +24,7 @@ interface DqContextType {
   submitMiniQuiz: (skillId: SkillId, correctCount: number, total: number) => void;
   submitDqAssessment: (result: any) => void;
   toggleSaveTip: (tipId: string) => void;
+  updateUserProfile: (name: string, institution?: string, studentId?: string) => void;
   resetProgress: () => void;
   toasts: ToastMessage[];
   removeToast: (id: string) => void;
@@ -185,6 +186,16 @@ export const DqProvider: React.FC<{ children: React.ReactNode }> = ({ children }
     });
   };
 
+  const updateUserProfile = (name: string, institution?: string, studentId?: string) => {
+    setStats((prev) => ({
+      ...prev,
+      userName: name.trim() || undefined,
+      institutionName: institution ? institution.trim() : undefined,
+      studentId: studentId ? studentId.trim() : undefined,
+    }));
+    addToast('บันทึกข้อมูลเรียบร้อย', `ชื่อผู้เรียน: ${name.trim() || 'ผู้เรียนรู้ DQ SMART LIFE'}`, 'success');
+  };
+
   const resetProgress = () => {
     setStats(defaultStats);
     addToast('รีเซ็ตข้อมูล', 'ข้อมูลการเรียนรู้ทั้งหมดถูกรีเซ็ตเรียบร้อยแล้ว', 'info');
@@ -245,6 +256,7 @@ export const DqProvider: React.FC<{ children: React.ReactNode }> = ({ children }
         submitMiniQuiz,
         submitDqAssessment,
         toggleSaveTip,
+        updateUserProfile,
         resetProgress,
         toasts,
         removeToast

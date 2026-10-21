@@ -85,6 +85,9 @@ export interface Badge {
 }
 
 export interface UserStats {
+  userName?: string;
+  institutionName?: string;
+  studentId?: string;
   xp: number;
   level: number;
   levelName: string;

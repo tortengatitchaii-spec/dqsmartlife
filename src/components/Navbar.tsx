@@ -66,6 +66,18 @@ export const Navbar: React.FC = () => {
 
         {/* Zone 3: Primary actions & XP indicator */}
         <div className="flex items-center gap-3">
+          {/* User Name Chip / Profile Link */}
+          <button
+            onClick={() => setActiveTab('profile')}
+            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-900/80 hover:bg-slate-850 hover:border-sky-800/60 border border-slate-800 rounded-lg text-xs transition-colors"
+            title="ไปยังหน้าโปรไฟล์และเกียรติบัตร"
+          >
+            <User className="w-3.5 h-3.5 text-sky-400" />
+            <span className="text-slate-200 font-medium max-w-[110px] truncate">
+              {stats.userName || 'โปรไฟล์'}
+            </span>
+          </button>
+
           {/* XP & Level Indicator */}
           <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 border border-slate-800 rounded-lg text-xs">
             <span className="text-amber-400 font-semibold flex items-center gap-1">

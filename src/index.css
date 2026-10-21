@@ -22,3 +22,52 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+/* Print Styles for Certificate of Completion */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  .certificate-modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    inset: auto !important;
+  }
+  .certificate-modal-box {
+    max-width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #print-area {
+    border: 8px double #0284c7 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    padding: 40px 32px !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  #print-area * {
+    color: #0f172a !important;
+  }
+  #print-area .cert-gold-text {
+    color: #b45309 !important;
+  }
+  #print-area .cert-blue-text {
+    color: #0369a1 !important;
+  }
+  #print-area .cert-muted-text {
+    color: #475569 !important;
+  }
+}
+
